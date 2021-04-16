@@ -1,4 +1,4 @@
-# Twitterbot, der tweeter så længe de danske børn ikke er hente hjem fra Syrien
+# Twitterbot for de danske børn i Syrien
 
 En gruppe af danske bønr sidder fanget under elendige forhold i fangelejre i Syrien. De børn skal hjem til Danmark.
 Denne twitterbot tweeter hver eneste dag så længe de danske børn ikke er kommet hjem til Danmark endnu.
