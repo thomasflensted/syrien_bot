@@ -21,6 +21,7 @@ def main():
     while True:
 
         txt = create_string(days_gone)
+        print(txt)
         api.update_status(txt)
         days_gone += 1
         time.sleep(one_day)
