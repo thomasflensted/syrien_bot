@@ -35,7 +35,7 @@ def create_string(num):
 
     elif num % 365 == 1:
 
-        txt = "De danske børn har nu siddet mindst {years} år og 1 dag i lejrene i Syrien. {tags}".format( years = int(num / 365), tags = tag_ministries)
+        txt = "De danske børn har nu siddet mindst {years} år og 1 dag i lejrene i Syrien. {tags}".format(years = int(num / 365), tags = tag_ministries)
 
     else:
 
