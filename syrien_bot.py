@@ -1,5 +1,5 @@
 import tweepy, time, os
-from credentials import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
+from credentials import *
 
 def main():
 
