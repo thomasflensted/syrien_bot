@@ -1,46 +1,39 @@
 import tweepy, time, os
-
-CONSUMER_KEY = os.environ.get('CONSUMER_KEY')
-CONSUMER_SECRET = os.environ.get('CONSUMER_SECRET')
-ACCESS_KEY = os.environ.get('ACCESS_KEY')
-ACCESS_SECRET = os.environ.get('ACCESS_SECRET')
-
-auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
-api = tweepy.API(auth)
+from credentials import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
 
 def main():
 
-    seconds_pr_min = 60
-    mins_pr_hour = 60
-    hours_pr_day = 24
-    one_day = seconds_pr_min * mins_pr_hour * hours_pr_day
+    auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+    auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
+    api = tweepy.API(auth)
 
+    interval = 5
     days_gone = 2 * 365
 
     while True:
 
         txt = create_string(days_gone)
-        print(txt)
         api.update_status(txt)
         days_gone += 1
-        time.sleep(one_day)
+        time.sleep(interval)
 
 def create_string(num):
 
     tag_ministries = "#bringboernenehjem @statsmin @DanishMFA"
+    years = int(num / 365)
+    days = int(num % 365)
 
-    if num % 365 == 0:
+    if days == 0:
 
-        txt = "De danske børn har nu siddet mindst {years} år i lejrene i Syrien. {tags}".format(years = int(num / 365), tags = tag_ministries)
+        txt = "De danske børn har nu siddet mindst {} år i lejrene i Syrien. {}".format(years, tag_ministries)
 
-    elif num % 365 == 1:
+    elif days == 1:
 
-        txt = "De danske børn har nu siddet mindst {years} år og 1 dag i lejrene i Syrien. {tags}".format(years = int(num / 365), tags = tag_ministries)
+        txt = "De danske børn har nu siddet mindst {} år og 1 dag i lejrene i Syrien. {}".format(years, tag_ministries)
 
     else:
 
-        txt = "De danske børn har nu siddet mindst {years} år og {days} dage i lejrene i Syrien. {tags}".format(years =  int(num / 365), days = num % 365, tags = tag_ministries)
+        txt = "De danske børn har nu siddet mindst {} år og {} dage i lejrene i Syrien. {}".format(years, days, tag_ministries)
 
     return txt
 
