@@ -16,7 +16,7 @@ def main():
     hours_pr_day = 24
     one_day = seconds_pr_min * mins_pr_hour * hours_pr_day
 
-    days_gone = (2 * 365) + 2 
+    days_gone = 2 * 365
 
     while True:
 
