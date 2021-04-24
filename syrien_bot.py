@@ -7,7 +7,7 @@ def main():
     auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
     api = tweepy.API(auth)
 
-    interval = 5
+    interval = 60 * 60 * 24
     days_gone = 2 * 365
 
     while True:
