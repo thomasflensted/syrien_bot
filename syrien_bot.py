@@ -1,5 +1,5 @@
 import tweepy, time, os
-from credentials import *
+# from credentials import *
 
 def main():
 
