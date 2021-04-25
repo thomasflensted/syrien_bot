@@ -20,6 +20,7 @@ def main():
         txt = create_string(days_gone)
         api.update_status(txt)
         days_gone += 1
+        print("Days gone: {}".format(days_gone))
         time.sleep(interval)
 
 def create_string(num):
