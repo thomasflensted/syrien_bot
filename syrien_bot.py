@@ -19,21 +19,21 @@ def main():
 
 def create_string(num):
 
-    tag_ministries = "#bringboernenehjem @statsmin @DanishMFA"
+    tags = "#bringboernenehjem @statsmin @DanishMFA"
     years = int(num / 365)
     days = int(num % 365)
 
     if days == 0:
 
-        txt = "De danske børn har nu siddet mindst {} år i lejrene i Syrien. {}".format(years, tag_ministries)
+        txt = "De danske børn har nu siddet mindst {} år i lejrene i Syrien. {}".format(years, tags)
 
     elif days == 1:
 
-        txt = "De danske børn har nu siddet mindst {} år og 1 dag i lejrene i Syrien. {}".format(years, tag_ministries)
+        txt = "De danske børn har nu siddet mindst {} år og 1 dag i lejrene i Syrien. {}".format(years, tags)
 
     else:
 
-        txt = "De danske børn har nu siddet mindst {} år og {} dage i lejrene i Syrien. {}".format(years, days, tag_ministries)
+        txt = "De danske børn har nu siddet mindst {} år og {} dage i lejrene i Syrien. {}".format(years, days, tags)
 
     return txt
 
