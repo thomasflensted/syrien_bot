@@ -13,7 +13,7 @@ def main():
     api = tweepy.API(auth)
 
     interval = 60 * 60 * 24
-    days_gone = 2 * 365
+    days_gone = (2 * 365) + 2
 
     while True:
 
